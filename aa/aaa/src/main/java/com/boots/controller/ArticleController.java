@@ -22,6 +22,7 @@ public class ArticleController {
     }
 
     @PostMapping ("/article/create")
+
     public String createArticle(@ModelAttribute ("articleForm") @Valid Article articleForm) {
         articleForm.setAuthor( userService.findUserById(userService.getCurrentUserById()));
         articleService.createArticle(articleForm);

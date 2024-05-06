@@ -31,6 +31,22 @@ public class User implements UserDetails {
         this.articles = new ArrayList<>();
     }
 
+    @OneToMany(mappedBy = "user")
+    private List<Comment> comments;
+
+
+    public void setArticles(List<Article> articles) {
+        this.articles = articles;
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }
+
     public Long getId() {
         return id;
     }

@@ -10,7 +10,6 @@
   <title>Articles</title>
   <% List<Article> articles = (List<Article>) request.getAttribute("allArticles"); %>
 </head>
-
 <body>
 <h1> Create Article </h1>
 <form:form method="POST" action="/article/create" modelAttribute="articleForm">
@@ -24,6 +23,10 @@
     <table>
         <thead>
         <tr>
+             -- <th>Title</th>
+              -- <th>Article</th>
+              -- <th>Text</th>
+             -- <th>Comment</th>
         </tr>
         </thead>
         <tbody>
@@ -57,6 +60,7 @@
             </td>
         </tr>
         <% } %>
+
         </tbody>
     </table>
 

@@ -1,5 +1,5 @@
 package com.boots.entity;
-
+import java.util.List;
 import javax.persistence.*;
 
 @Entity
@@ -14,6 +14,9 @@ public class Article {
     private String text;
     @ManyToOne
     private User author;
+
+    @OneToMany(mappedBy = "article")
+    private List<Comment> comments;
 
     public Long getId() {
         return id;
@@ -45,5 +48,13 @@ public class Article {
 
     public void setAuthor(User author) {
         this.author = author;
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
     }
 }
